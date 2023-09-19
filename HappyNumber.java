@@ -1,4 +1,4 @@
-class 202 {
+class HappyNumber {
     public boolean isHappy(int n) {
         HashSet<Integer> set = new HashSet<>();
         while (!set.contains(n)) {
