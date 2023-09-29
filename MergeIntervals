@@ -4,14 +4,14 @@ class MergeIntervals {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
         
         List<int[]> list = new ArrayList<>();
-        int[] newInterval = intervals[0];
-        list.add(newInterval);
-        for (int[] interval : intervals) {
-            if (interval[0] <= newInterval[1]) {
-                newInterval[1] = Math.max(newInterval[1], interval[1]);
+        int[] arr = intervals[0];
+        list.add(arr);
+        for (int[] curr : intervals) {
+            if (curr[0] <= arr[1]) {
+                arr[1] = Math.max(curr[1], arr[1]); 
             } else {
-                newInterval = interval;
-                list.add(newInterval);
+                arr = curr;
+                list.add(curr);
             }
         }
         return list.toArray(new int[list.size()][]);
