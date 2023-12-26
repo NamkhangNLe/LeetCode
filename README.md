@@ -1,2 +1,2 @@
 # Leetcode Practice
-Dynamic Programming is my jam
+Determine Dynamic Programmer
