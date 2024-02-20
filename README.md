@@ -1,2 +1,2 @@
 # Leetcode Practice
-Determine Dynamic Programmer
+Determined Dynamic Programmer
