@@ -1,20 +1,17 @@
 class ValidParentheses {
     public boolean isValid(String s) {
-        Stack stack = new Stack();
-        stack.push(s.charAt(0));
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
-                stack.push(s.charAt(i));
-            } else if (stack.size() != 0 && stack.peek().equals('(') && s.charAt(i) == ')') {
-                stack.pop();
-            } else if (stack.size() != 0 && stack.peek().equals('{') && s.charAt(i) == '}') {
-                stack.pop();
-            } else if (stack.size() != 0 && stack.peek().equals('[') && s.charAt(i) == ']') {
-                stack.pop();
-            } else {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(')'); 
+            } else if (s.charAt(i) == '{') { 
+                stack.push('}');
+            } else if (s.charAt(i) == '[') {
+                stack.push(']'); 
+            } else if (stack.isEmpty() || stack.pop() != s.charAt(i)) {
                 return false;
             }
         }
-        return (stack.size() == 0);
+        return stack.isEmpty();
     }
 }
