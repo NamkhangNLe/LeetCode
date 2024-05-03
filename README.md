@@ -1,2 +1,2 @@
 # Leetcode Practice
-Determined Dynamic Programmer
+A Determined Dynamic Programmer
